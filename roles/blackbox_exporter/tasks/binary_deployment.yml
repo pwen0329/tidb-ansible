@@ -8,9 +8,9 @@
 - name: deploy blackbox_exporter binary
   copy: src="{{ resources_dir }}/bin/blackbox_exporter" dest="{{ deploy_dir }}/bin" mode=0755
 
-- name: blackbox_exporter binary add CAP_NET_RAW capability
-  command: setcap cap_net_raw+ep "{{ deploy_dir }}/bin/blackbox_exporter"
-  become: true
+  #- name: blackbox_exporter binary add CAP_NET_RAW capability
+  #  command: setcap cap_net_raw+ep "{{ deploy_dir }}/bin/blackbox_exporter"
+  #  become: true
 
 - name: create run script
   template:
